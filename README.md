@@ -1,4 +1,8 @@
 <<<<<<< HEAD
+# burger-builder
+> Academind's Udemy React course 
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -68,5 +72,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 =======
-# burger-builder project
 >>>>>>> 8281889efd5b46b4a0dc7ef01340bad9de9f33f7
