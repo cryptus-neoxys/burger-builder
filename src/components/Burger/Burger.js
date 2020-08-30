@@ -5,7 +5,7 @@ import BurgerIngredient from './BurgerIngridient/BurgerIngredient'
 
 const burger = (props) => {
 	// Extract each ingredient .. for eg : Bacon, cheese, salad
-	const transformedIngredients = Object.keys(
+	let transformedIngredients = Object.keys(
 		props.ingredients).map(igKey => {
 			//make an array of length same as qty of ingredient(igKey)
 			// eg: Bacon : 2, cheese : 1, salad : 1  (respectively undefined arrays [,], [], [])
@@ -14,7 +14,14 @@ const burger = (props) => {
 			//with length same as of no. of ingredients add the JSX to render
 			return <BurgerIngredient key={igKey + i} type={igKey} />
 		})
-	})
+	}).reduce((curr, prev) => {
+		return curr.concat(prev)
+	}, [])
+
+	if(transformedIngredients.length === 0) {
+		transformedIngredients = <p>Please start adding ingredients!</p>
+	}
+
 	return (
 		<div className={classes.Burger}>
 			<BurgerIngredient type='bread-top' />
