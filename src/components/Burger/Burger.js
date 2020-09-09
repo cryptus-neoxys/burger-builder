@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+
 
 import classes from './Burger.module.css';
 import BurgerIngredient from './BurgerIngridient/BurgerIngredient'
