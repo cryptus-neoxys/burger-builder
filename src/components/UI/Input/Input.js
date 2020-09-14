@@ -15,21 +15,21 @@ const input = (props) => {
             inputElement = <input 
                 className={inputClasses.join(' ')} 
                 {...props.elementConfig} 
-                value={props.vale}
+                value={props.value}
                 onChange={props.changed} />;
             break;
         case ('textarea'):
             inputElement = <textarea 
                 className={inputClasses.join(' ')} 
                 {...props.elementConfig} 
-                value={props.vale}
+                value={props.value}
                 onChange={props.changed} />;
             break;
         case ('select'):
             inputElement = (
             <select 
                 className={inputClasses.join(' ')} 
-                value={props.vale}
+                value={props.value}
                 onChange={props.changed} >
                 {props.elementConfig.options.map(option => (
                     <option key={option.value} value={option.value}>
@@ -43,14 +43,25 @@ const input = (props) => {
             inputElement = <input 
                 className={inputClasses.join(' ')} 
                 {...props.elementConfig} 
-                value={props.vale}
+                value={props.value}
                 onChange={props.changed} />;
+    }
+    // let validationError = (label) => (
+    //     (props.invalid && props.shouldValidate && props.touched) ?
+    //         <p>Please enter a valid {label}!</p> :  null);
+    // if (props.invalid && props.shouldValidate && props.touched) {
+    //     validationError = (label) => <p>Please enter a valid {label}!</p>;
+    // }
+    let validationError = null;
+    if (props.invalid && props.touched) {
+        validationError = <p className={classes.ValidationError} >Please enter a valid {props.inputName}!</p>;
     }
 
     return (
         <div className={classes.Input}>
             <label htmlFor="">{props.label}</label>
             {inputElement}
+            {validationError}
         </div>
     )
 }

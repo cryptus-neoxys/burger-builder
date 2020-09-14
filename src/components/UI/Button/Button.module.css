@@ -8,6 +8,7 @@
     padding: 10px;
     margin: 10px;
     font-weight: bold;
+    transition: 0.3s linear;
 }
 
 .Button:first-of-type {
@@ -21,4 +22,14 @@
 
 .Danger {
     color: #944317;
+}
+
+.Button:disabled {
+    color: #43683a;
+    background-color: #adadad;
+    cursor: not-allowed;
+}
+
+.Button .Danger:disabled {
+    color: #8b786d;
 }
